@@ -24,10 +24,9 @@ static constexpr int PIN_TEST_BUTTON = 22;
 
 #endif
 
-#elif defined(BOARD_XIAO_C3)
+#elif defined(BOARD_XIAO_C6)
 
-// End-user XIAO ESP32-C3 hardware
-// These are role-dependent below.
+// End-user XIAO ESP32-C6 hardware
 
 #if defined(ROLE_DETECTOR)
 
