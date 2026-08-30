@@ -23,7 +23,23 @@ void setup() {
 
 #endif
 }
-
 void loop() {
-    // Hardware test logic comes next.
+
+#if defined(ROLE_DETECTOR)
+
+    static bool previousState = LOW;
+    bool currentState = digitalRead(PIN_TRIGGER_INPUT);
+
+    if (currentState == HIGH && previousState == LOW) {
+        Serial.println("TRIGGER DETECTED");
+        digitalWrite(PIN_STATUS_LED, HIGH);
+    }
+
+    if (currentState == LOW) {
+        digitalWrite(PIN_STATUS_LED, LOW);
+    }
+
+    previousState = currentState;
+
+#endif
 }

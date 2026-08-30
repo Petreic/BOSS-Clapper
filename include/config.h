@@ -12,9 +12,17 @@ static constexpr int PIN_STATUS_LED    = 5;
 
 #elif defined(BOARD_WROOM32E)
 
-// Bench controller board
+#if defined(ROLE_DETECTOR)
+
+static constexpr int PIN_TRIGGER_INPUT = 23;
+static constexpr int PIN_STATUS_LED    = 22;
+
+#elif defined(ROLE_CONTROLLER)
+
 static constexpr int PIN_CLAP_OUTPUT = 23;
 static constexpr int PIN_TEST_BUTTON = 22;
+
+#endif
 
 #elif defined(BOARD_XIAO_C3)
 
